@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"org.example","c":"Calculator","l":"add(int, int)","u":"add(int,int)"},{"p":"org.example","c":"Calculator","l":"Calculator()","u":"%3Cinit%3E()"},{"p":"org.example","c":"Main","l":"Main()","u":"%3Cinit%3E()"},{"p":"org.example","c":"Calculator","l":"multiply(int, int)","u":"multiply(int,int)"}];updateSearchResults();
