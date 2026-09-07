@@ -6,6 +6,14 @@ plugins {
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
 repositories {
     mavenCentral()
 }
@@ -23,5 +31,10 @@ test {
 jacocoTestReport {
     reports {
         xml.required = true
+    }
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['**/Main.class'])
+        }))
     }
 }

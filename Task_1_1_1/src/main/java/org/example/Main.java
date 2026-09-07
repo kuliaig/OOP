@@ -1,19 +1,27 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
- * Проверяет работу сортировки на примере из задачи
+ * Проверяет работу сортировки, можно ввести свой массив
  */
 public class Main {
     /**
-     * Выводит пример из условия задачи
+     * Сортирует массив
      *
-     * @param args не используется
+     * @param args элементы массива
      */
     public static void main(String[] args) {
-        int[] arr= {5, 4, 3, 2, 1};
-        System.out.println("Вход: " + java.util.Arrays.toString(arr));
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Вход: ");
+        String line = scanner.nextLine();
+        scanner.close();
+        String[] string_arr= line.split(" ");
+        int[] arr= new int[string_arr.length];
+        for (int i = 0; i < string_arr.length; i++) {
+            arr[i] = Integer.parseInt(string_arr[i]);
+        }
         HeapSort.heapsort(arr);
         System.out.println("Выход: " + java.util.Arrays.toString(arr));
     }
