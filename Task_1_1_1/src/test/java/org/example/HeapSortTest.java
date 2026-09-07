@@ -1,9 +1,13 @@
 package org.example;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-public class HeapSort_Test {
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+/**
+ * Тесты для HeapSort.
+ */
+public class HeapSortTest {
 
     @Test public void sort_empty() {
         int[] arr = {};

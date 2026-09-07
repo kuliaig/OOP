@@ -1,13 +1,13 @@
 package org.example;
 
 /**
- * Пирамидальная сортировка
+ * Пирамидальная сортировка.
  * Сложность P(n*log(n))
  */
 public class HeapSort {
     /**
-     * Функция для сортировки
-     * Создает maxheap, убирает элемент в конец и так со всеми элементами
+     * Функция для сортировки.
+     * Создает maxheap, убирает элемент в конец и так со всеми элементами.
      *
      * @param arr массив для сортировки
       */
@@ -26,24 +26,23 @@ public class HeapSort {
     }
 
     /**
-     * Меняет местами два элемента массива по индексам i и j
+     * Меняет местами два элемента массива по индексам i и j.
      */
-    private static void swap(int[] arr, int i, int j)
-    {
+    private static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
     /**
-     * Проталкиваем элементы вниз для создания кучи
+     * Проталкиваем элементы вниз для создания кучи.
      * num - количество еще не отсортированных элементов
       */
 
     private static void siftdown(int[] arr, int i, int num) {
         int now = i;
-        int left = i*2 + 1;
-        int right = i*2 + 2;
+        int left = i * 2 + 1;
+        int right = i * 2 + 2;
 
         if (left < num && arr[left] > arr[now]) {
             now = left;
