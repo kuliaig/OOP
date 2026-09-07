@@ -5,32 +5,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HeapSort_Test {
 
-    @Test public void sort_empty()
-    {
+    @Test public void sort_empty() {
         int[] arr = {};
         int[] result = {};
         HeapSort.heapsort(arr);
         assertArrayEquals(result, arr);
     }
 
-    @Test public void sort_usual()
-    {
+    @Test public void sort_usual() {
         int[] arr = {3, 4, 1, 2, 8, 9};
         int[] result = {1, 2, 3, 4, 8, 9};
         HeapSort.heapsort(arr);
         assertArrayEquals(result, arr);
     }
 
-    @Test public void sort_sort()
-    {
+    @Test public void sort_sort() {
         int[] arr = {1, 2, 3, 4, 5};
         int[] result = {1, 2, 3, 4, 5};
         HeapSort.heapsort(arr);
         assertArrayEquals(result, arr);
     }
 
-    @Test public void sort_unsort()
-    {
+    @Test public void sort_unsort() {
         int[] arr = {5, 4, 3, 2, 1};
         int[] result = {1, 2, 3, 4, 5};
         HeapSort.heapsort(arr);
