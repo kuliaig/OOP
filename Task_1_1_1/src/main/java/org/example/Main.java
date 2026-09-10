@@ -10,7 +10,7 @@ public class Main {
     /**
      * Сортирует массив.
      *
-     * @param args элементы массива
+     * @param args аргументы командной строки (не используются)
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class Main {
         for (int i = 0; i < stringArr.length; i++) {
             arr[i] = Integer.parseInt(stringArr[i]);
         }
-        HeapSort.heapsort(arr);
-        System.out.println("Выход: " + java.util.Arrays.toString(arr));
+        HeapSort.sort(arr);
+        System.out.println("Выход: " + Arrays.toString(arr));
     }
 }
