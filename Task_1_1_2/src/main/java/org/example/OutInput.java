@@ -172,8 +172,8 @@ public class OutInput {
      */
     public static int askNextRound() {
         while (true) {
-            System.out.println("Введите \"1\", чтобы продолжить игру, и \"0\", " +
-                    "чтобы остановиться...");
+            System.out.println("Введите \"1\", чтобы продолжить игру, и \"0\", "
+                    + "чтобы остановиться...");
 
             if (SCANNER.hasNextInt()) {
                 int choice = SCANNER.nextInt();
