@@ -32,19 +32,19 @@ class RankTest {
 
     @ParameterizedTest
     @CsvSource({
-            "TWO, Двойка",
-            "THREE, Тройка",
-            "FOUR, Четверка",
-            "FIVE, Пятерка",
-            "SIX, Шестерка",
-            "SEVEN, Семерка",
-            "EIGHT, Восьмерка",
-            "NINE, Девятка",
-            "TEN, Десятка",
-            "JACK, Валет",
-            "QUEEN, Дама",
-            "KING, Король",
-            "ACE, Туз"
+        "TWO, Двойка",
+        "THREE, Тройка",
+        "FOUR, Четверка",
+        "FIVE, Пятерка",
+        "SIX, Шестерка",
+        "SEVEN, Семерка",
+        "EIGHT, Восьмерка",
+        "NINE, Девятка",
+        "TEN, Десятка",
+        "JACK, Валет",
+        "QUEEN, Дама",
+        "KING, Король",
+        "ACE, Туз"
     })
     void testGetRussianName(Rank rank, String expected) {
         assertEquals(expected, rank.toString());
