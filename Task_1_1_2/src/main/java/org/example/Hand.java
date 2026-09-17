@@ -73,7 +73,7 @@ public class Hand {
     }
 
     /**
-     * Возвращает все карты в руке в строковой форме
+     * Возвращает все карты в руке в строковой форме.
      *
      * @return [карта, карта,.. карта]
      */
@@ -90,7 +90,7 @@ public class Hand {
             count++;
         }
 
-        int countAce = (sum - getScore())/10;
+        int countAce = (sum - getScore()) / 10;
 
         for (Card card : cards) {
             if (card.getRank() == Rank.ACE && countAce > 0) {

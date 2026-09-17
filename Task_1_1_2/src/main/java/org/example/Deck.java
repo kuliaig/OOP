@@ -1,8 +1,8 @@
 package org.example;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Колода.
@@ -18,8 +18,8 @@ public class Deck {
      */
     public Deck(int deckCount) {
         for (int i = 0; i < deckCount; i++) {
-            for (Rank rank: Rank.values()) {
-                for (Suit suit: Suit.values()) {
+            for (Rank rank : Rank.values()) {
+                for (Suit suit : Suit.values()) {
                     decks.add(new Card(rank, suit));
                 }
             }
@@ -28,7 +28,7 @@ public class Deck {
     }
 
     /**
-     * Размер колоды в данный момент
+     * Размер колоды в данный момент.
      *
      * @return количество оставшихся в колоде карт
      */
@@ -36,11 +36,12 @@ public class Deck {
         return decks.size();
     }
 
-
+    /**
+     * Дает карту
+     *
+     * @return карта
+     */
     public Card getCard() {
-        if (decks.isEmpty()) {
-            throw new IllegalStateException("Колода закончилась");
-        }
         return decks.remove(decks.size() - 1);
     }
 }

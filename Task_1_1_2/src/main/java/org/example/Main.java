@@ -3,7 +3,7 @@ package org.example;
 import java.io.PrintStream;
 
 /**
- * Для запуска программы
+ * Для запуска программы.
  */
 public class Main {
 
