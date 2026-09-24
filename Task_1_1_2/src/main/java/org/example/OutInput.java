@@ -10,7 +10,7 @@ public class OutInput {
     private static Scanner scanner = new Scanner(System.in);
 
     /**
-     * Сбрасывает сканер
+     * Сбрасывает сканер.
      */
     static void resetScanner() {
         scanner = new Scanner(System.in);
@@ -108,6 +108,8 @@ public class OutInput {
             case DRAW:
                 System.out.println("Ничья! Счёт " + usersScore + ":" + dealersScore);
                 break;
+            default:
+                break;
         }
         System.out.println();
     }
@@ -203,21 +205,21 @@ public class OutInput {
     }
 
     /**
-     * Выводит сообщение "У дилера блэкджек, ты проиграл :("
+     * Выводит сообщение "У дилера блэкджек, ты проиграл :(".
      */
     public static void dealerBlack() {
         System.out.println("У дилера блэкджек, вы проиграли :(");
     }
 
     /**
-     * Выводит сообщение "Поздравляю, у вас блэкджек!"
+     * Выводит сообщение "Поздравляю, у вас блэкджек!".
      */
     public static void userBlack() {
         System.out.println("Поздравляю, у вас блэкджек!");
     }
 
     /**
-     * Выводит сообщение "И у вас и у дилера блэкджек, ничья D:"
+     * Выводит сообщение "И у вас и у дилера блэкджек, ничья D:".
      */
     public static void bothBlack() {
         System.out.println("И у вас и у дилера блэкджек, ничья D:");

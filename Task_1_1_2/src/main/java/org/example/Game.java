@@ -167,7 +167,7 @@ public class Game {
             case DEALER_WIN:
                 dealersWin++;
                 break;
-            case DRAW:
+            default:
                 break;
         }
         OutInput.printEndRound(result, playersWin, dealersWin);
@@ -183,7 +183,7 @@ public class Game {
         Card closedCard = startRound();
 
         if (user.getHand().isBlackjack() || dealer.getHand().isBlackjack()) {
-            RoundResult result = checkBlack();
+            final RoundResult result = checkBlack();
 
             closedCard.setOpen(true);
             OutInput.dealerOpenClosed(closedCard);
@@ -195,7 +195,7 @@ public class Game {
 
         OutInput.printYourMove();
         int take = OutInput.askTakeCard();
-        boolean stop = usersMove(take);
+        final boolean stop = usersMove(take);
 
         OutInput.printDealersMove();
         closedCard.setOpen(true);

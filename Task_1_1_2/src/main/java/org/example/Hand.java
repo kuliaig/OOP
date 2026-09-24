@@ -40,10 +40,10 @@ public class Hand {
         int countAce = 0;
 
         for (Card card : cards) {
-           sum += card.getValue();
-           if (card.getRank() == Rank.ACE) {
-               countAce++;
-           }
+            sum += card.getValue();
+            if (card.getRank() == Rank.ACE) {
+                countAce++;
+            }
         }
 
         while (sum > 21 && countAce > 0) {
