@@ -48,7 +48,7 @@ loadScripts(document, 'script');</script>
 <div class="header">
 <h1>Index</h1>
 </div>
-<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a>
 <h2 class="title" id="I:A">A</h2>
 <dl class="index">
 <dt><a href="org/example/Hand.html#addCard(org.example.Card)" class="member-name-link">addCard(Card)</a> - Method in class org.example.<a href="org/example/Hand.html" title="class in org.example">Hand</a></dt>
@@ -64,6 +64,13 @@ loadScripts(document, 'script');</script>
 <div class="block">Спрашивает у игрока, брать следующую карту или нет.</div>
 </dd>
 </dl>
+<h2 class="title" id="I:B">B</h2>
+<dl class="index">
+<dt><a href="org/example/OutInput.html#bothBlack()" class="member-name-link">bothBlack()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Выводит сообщение "И у вас и у дилера блэкджек, ничья D:"</div>
+</dd>
+</dl>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
 <dt><a href="org/example/Card.html" class="type-name-link" title="class in org.example">Card</a> - Class in <a href="org/example/package-summary.html">org.example</a></dt>
@@ -77,6 +84,12 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:D">D</h2>
 <dl class="index">
+<dt><a href="org/example/RoundResult.html#DEALER_WIN" class="member-name-link">DEALER_WIN</a> - Enum constant in enum class org.example.<a href="org/example/RoundResult.html" title="enum class in org.example">RoundResult</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/example/OutInput.html#dealerBlack()" class="member-name-link">dealerBlack()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Выводит сообщение "У дилера блэкджек, ты проиграл :("</div>
+</dd>
 <dt><a href="org/example/OutInput.html#dealerOpen(org.example.Card)" class="member-name-link">dealerOpen(Card)</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
 <dd>
 <div class="block">Выводит сообщение "Дилер открывает карту ...".</div>
@@ -89,10 +102,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Вывод карт дилера.</div>
 </dd>
-<dt><a href="org/example/OutInput.html#dealersMove()" class="member-name-link">dealersMove()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
-<dd>
-<div class="block">Вывод надписи Ход дилера.</div>
-</dd>
 <dt><a href="org/example/Deck.html" class="type-name-link" title="class in org.example">Deck</a> - Class in <a href="org/example/package-summary.html">org.example</a></dt>
 <dd>
 <div class="block">Колода.</div>
@@ -101,13 +110,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Создание новой колоды.</div>
 </dd>
-</dl>
-<h2 class="title" id="I:E">E</h2>
-<dl class="index">
-<dt><a href="org/example/OutInput.html#endRound(boolean,int,int)" class="member-name-link">endRound(boolean, int, int)</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
-<dd>
-<div class="block">Вывод в конце раунда.</div>
-</dd>
+<dt><a href="org/example/RoundResult.html#DRAW" class="member-name-link">DRAW</a> - Enum constant in enum class org.example.<a href="org/example/RoundResult.html" title="enum class in org.example">RoundResult</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:G">G</h2>
 <dl class="index">
@@ -147,10 +151,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Возвращает значение карты в очках.</div>
 </dd>
-<dt><a href="org/example/OutInput.html#giveCards()" class="member-name-link">giveCards()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
-<dd>
-<div class="block">Выводит сообщение о раздаче карт.</div>
-</dd>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
@@ -163,9 +163,21 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
+<dt><a href="org/example/Hand.html#isBlackjack()" class="member-name-link">isBlackjack()</a> - Method in class org.example.<a href="org/example/Hand.html" title="class in org.example">Hand</a></dt>
+<dd>
+<div class="block">Проверяет, блэкджек у игрока или нет.</div>
+</dd>
+<dt><a href="org/example/Hand.html#isBust()" class="member-name-link">isBust()</a> - Method in class org.example.<a href="org/example/Hand.html" title="class in org.example">Hand</a></dt>
+<dd>
+<div class="block">Проверяет, перебор или нет.</div>
+</dd>
 <dt><a href="org/example/Card.html#isOpen()" class="member-name-link">isOpen()</a> - Method in class org.example.<a href="org/example/Card.html" title="class in org.example">Card</a></dt>
 <dd>
 <div class="block">Возвращает открыта карта или закрыта.</div>
+</dd>
+<dt><a href="org/example/Hand.html#isTwentyOne()" class="member-name-link">isTwentyOne()</a> - Method in class org.example.<a href="org/example/Hand.html" title="class in org.example">Hand</a></dt>
+<dd>
+<div class="block">Проверяет, равна ли сумма 21.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:M">M</h2>
@@ -208,20 +220,49 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/example/Player.html#%3Cinit%3E()" class="member-name-link">Player()</a> - Constructor for class org.example.<a href="org/example/Player.html" title="class in org.example">Player</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/example/RoundResult.html#PLAYER_WIN" class="member-name-link">PLAYER_WIN</a> - Enum constant in enum class org.example.<a href="org/example/RoundResult.html" title="enum class in org.example">RoundResult</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/example/OutInput.html#printDealersMove()" class="member-name-link">printDealersMove()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Вывод надписи Ход дилера.</div>
+</dd>
 <dt><a href="org/example/OutInput.html#printEmpty()" class="member-name-link">printEmpty()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
 <dd>
 <div class="block">Выводит пустую строку.</div>
+</dd>
+<dt><a href="org/example/OutInput.html#printEndRound(org.example.RoundResult,int,int)" class="member-name-link">printEndRound(RoundResult, int, int)</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Вывод в конце раунда.</div>
 </dd>
 <dt><a href="org/example/OutInput.html#printNewDeck(int)" class="member-name-link">printNewDeck(int)</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
 <dd>
 <div class="block">Сообщение о новой колоде.</div>
 </dd>
+<dt><a href="org/example/OutInput.html#printYourMove()" class="member-name-link">printYourMove()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Вывод надписи Ваш ход.</div>
+</dd>
+</dl>
+<h2 class="title" id="I:R">R</h2>
+<dl class="index">
+<dt><a href="org/example/RoundResult.html" class="type-name-link" title="enum class in org.example">RoundResult</a> - Enum Class in <a href="org/example/package-summary.html">org.example</a></dt>
+<dd>
+<div class="block">Результат раунда.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
+<dt><a href="org/example/OutInput.html#sayGiveCards()" class="member-name-link">sayGiveCards()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Выводит сообщение о раздаче карт.</div>
+</dd>
 <dt><a href="org/example/OutInput.html#sayHello()" class="member-name-link">sayHello()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
 <dd>
 <div class="block">Приветствие пользователя.</div>
+</dd>
+<dt><a href="org/example/OutInput.html#sayStartRound(int)" class="member-name-link">sayStartRound(int)</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Начало нового раунда.</div>
 </dd>
 <dt><a href="org/example/OutInput.html#sayTooMuch()" class="member-name-link">sayTooMuch()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
 <dd>
@@ -239,16 +280,16 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Начинает игру.</div>
 </dd>
-<dt><a href="org/example/OutInput.html#startRound(int)" class="member-name-link">startRound(int)</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
-<dd>
-<div class="block">Начало нового раунда.</div>
-</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
 <dt><a href="org/example/Hand.html#takeCard(org.example.Deck)" class="member-name-link">takeCard(Deck)</a> - Method in class org.example.<a href="org/example/Hand.html" title="class in org.example">Hand</a></dt>
 <dd>
 <div class="block">Рука берет карту из колоды.</div>
+</dd>
+<dt><a href="org/example/RoundResult.html#takeResult(org.example.Hand,org.example.Hand)" class="member-name-link">takeResult(Hand, Hand)</a> - Static method in enum class org.example.<a href="org/example/RoundResult.html" title="enum class in org.example">RoundResult</a></dt>
+<dd>
+<div class="block">Проводит результат раунда (не считая блэкджек).</div>
 </dd>
 <dt><a href="org/example/Card.html#toRussian(boolean)" class="member-name-link">toRussian(boolean)</a> - Method in class org.example.<a href="org/example/Card.html" title="class in org.example">Card</a></dt>
 <dd>
@@ -261,9 +302,25 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:U">U</h2>
 <dl class="index">
+<dt><a href="org/example/OutInput.html#userBlack()" class="member-name-link">userBlack()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
+<dd>
+<div class="block">Выводит сообщение "Поздравляю, у вас блэкджек!"</div>
+</dd>
 <dt><a href="org/example/OutInput.html#usersCards(org.example.Player)" class="member-name-link">usersCards(Player)</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
 <dd>
 <div class="block">Вывод карт пользователя.</div>
+</dd>
+</dl>
+<h2 class="title" id="I:V">V</h2>
+<dl class="index">
+<dt><a href="org/example/RoundResult.html#valueOf(java.lang.String)" class="member-name-link">valueOf(String)</a> - Static method in enum class org.example.<a href="org/example/RoundResult.html" title="enum class in org.example">RoundResult</a></dt>
+<dd>
+<div class="block">Returns the enum constant of this class with the specified name.</div>
+</dd>
+<dt><a href="org/example/RoundResult.html#values()" class="member-name-link">values()</a> - Static method in enum class org.example.<a href="org/example/RoundResult.html" title="enum class in org.example">RoundResult</a></dt>
+<dd>
+<div class="block">Returns an array containing the constants of this enum class, in
+the order they are declared.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:Y">Y</h2>
@@ -272,12 +329,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Выводит сообщение "Вы открыли карту ...".</div>
 </dd>
-<dt><a href="org/example/OutInput.html#yourMove()" class="member-name-link">yourMove()</a> - Static method in class org.example.<a href="org/example/OutInput.html" title="class in org.example">OutInput</a></dt>
-<dd>
-<div class="block">Вывод надписи Ваш ход.</div>
-</dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:Y">Y</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a></main>
 </div>
 </div>
 </body>

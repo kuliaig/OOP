@@ -115,6 +115,16 @@ loadScripts(document, 'script');</script>
 <div class="block">Спрашивает у игрока, брать следующую карту или нет.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#bothBlack()" class="member-name-link">bothBlack</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Выводит сообщение "И у вас и у дилера блэкджек, ничья D:"</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dealerBlack()" class="member-name-link">dealerBlack</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Выводит сообщение "У дилера блэкджек, ты проиграл :("</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dealerOpen(org.example.Card)" class="member-name-link">dealerOpen</a><wbr>(<a href="Card.html" title="class in org.example">Card</a>&nbsp;card)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Выводит сообщение "Дилер открывает карту ...".</div>
@@ -131,21 +141,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Вывод карт дилера.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#dealersMove()" class="member-name-link">dealersMove</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printDealersMove()" class="member-name-link">printDealersMove</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Вывод надписи Ход дилера.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#endRound(boolean,int,int)" class="member-name-link">endRound</a><wbr>(boolean&nbsp;usersWin,
- int&nbsp;usersScore,
- int&nbsp;dealersScore)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Вывод в конце раунда.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#giveCards()" class="member-name-link">giveCards</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Выводит сообщение о раздаче карт.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printEmpty()" class="member-name-link">printEmpty</a>()</code></div>
@@ -153,14 +151,36 @@ loadScripts(document, 'script');</script>
 <div class="block">Выводит пустую строку.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printNewDeck(int)" class="member-name-link">printNewDeck</a><wbr>(int&nbsp;deckCount)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printEndRound(org.example.RoundResult,int,int)" class="member-name-link">printEndRound</a><wbr>(<a href="RoundResult.html" title="enum class in org.example">RoundResult</a>&nbsp;result,
+ int&nbsp;usersScore,
+ int&nbsp;dealersScore)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Сообщение о новой колоде.</div>
+<div class="block">Вывод в конце раунда.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sayHello()" class="member-name-link">sayHello</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printNewDeck(int)" class="member-name-link">printNewDeck</a><wbr>(int&nbsp;deckCount)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Сообщение о новой колоде.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#printYourMove()" class="member-name-link">printYourMove</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Вывод надписи Ваш ход.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sayGiveCards()" class="member-name-link">sayGiveCards</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Выводит сообщение о раздаче карт.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sayHello()" class="member-name-link">sayHello</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Приветствие пользователя.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sayStartRound(int)" class="member-name-link">sayStartRound</a><wbr>(int&nbsp;countRound)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Начало нового раунда.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sayTooMuch()" class="member-name-link">sayTooMuch</a>()</code></div>
@@ -173,9 +193,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Выводит сообщение о наборе 21.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#startRound(int)" class="member-name-link">startRound</a><wbr>(int&nbsp;countRound)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#userBlack()" class="member-name-link">userBlack</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Начало нового раунда.</div>
+<div class="block">Выводит сообщение "Поздравляю, у вас блэкджек!"</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#usersCards(org.example.Player)" class="member-name-link">usersCards</a><wbr>(<a href="Player.html" title="class in org.example">Player</a>&nbsp;player)</code></div>
@@ -186,11 +206,6 @@ loadScripts(document, 'script');</script>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#youOpen(org.example.Card)" class="member-name-link">youOpen</a><wbr>(<a href="Card.html" title="class in org.example">Card</a>&nbsp;card)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Выводит сообщение "Вы открыли карту ...".</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#yourMove()" class="member-name-link">yourMove</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Вывод надписи Ваш ход.</div>
 </div>
 </div>
 </div>
@@ -231,9 +246,9 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="startRound(int)">
-<h3>startRound</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">startRound</span><wbr><span class="parameters">(int&nbsp;countRound)</span></div>
+<section class="detail" id="sayStartRound(int)">
+<h3>sayStartRound</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sayStartRound</span><wbr><span class="parameters">(int&nbsp;countRound)</span></div>
 <div class="block">Начало нового раунда.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -242,9 +257,9 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="giveCards()">
-<h3>giveCards</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">giveCards</span>()</div>
+<section class="detail" id="sayGiveCards()">
+<h3>sayGiveCards</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">sayGiveCards</span>()</div>
 <div class="block">Выводит сообщение о раздаче карт.</div>
 </section>
 </li>
@@ -281,29 +296,29 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="yourMove()">
-<h3>yourMove</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">yourMove</span>()</div>
+<section class="detail" id="printYourMove()">
+<h3>printYourMove</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">printYourMove</span>()</div>
 <div class="block">Вывод надписи Ваш ход.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="dealersMove()">
-<h3>dealersMove</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dealersMove</span>()</div>
+<section class="detail" id="printDealersMove()">
+<h3>printDealersMove</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">printDealersMove</span>()</div>
 <div class="block">Вывод надписи Ход дилера.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="endRound(boolean,int,int)">
-<h3>endRound</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">endRound</span><wbr><span class="parameters">(boolean&nbsp;usersWin,
+<section class="detail" id="printEndRound(org.example.RoundResult,int,int)">
+<h3>printEndRound</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">printEndRound</span><wbr><span class="parameters">(<a href="RoundResult.html" title="enum class in org.example">RoundResult</a>&nbsp;result,
  int&nbsp;usersScore,
  int&nbsp;dealersScore)</span></div>
 <div class="block">Вывод в конце раунда.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>usersWin</code> - выиграл ли пользователь</dd>
+<dd><code>result</code> - результат раунда</dd>
 <dd><code>usersScore</code> - счет пользователя (сколько раундов выиграл)</dd>
 <dd><code>dealersScore</code> - счет дилера</dd>
 </dl>
@@ -375,6 +390,27 @@ loadScripts(document, 'script');</script>
 <h3>dealerOpen</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dealerOpen</span><wbr><span class="parameters">(<a href="Card.html" title="class in org.example">Card</a>&nbsp;card)</span></div>
 <div class="block">Выводит сообщение "Дилер открывает карту ...".</div>
+</section>
+</li>
+<li>
+<section class="detail" id="dealerBlack()">
+<h3>dealerBlack</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dealerBlack</span>()</div>
+<div class="block">Выводит сообщение "У дилера блэкджек, ты проиграл :("</div>
+</section>
+</li>
+<li>
+<section class="detail" id="userBlack()">
+<h3>userBlack</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">userBlack</span>()</div>
+<div class="block">Выводит сообщение "Поздравляю, у вас блэкджек!"</div>
+</section>
+</li>
+<li>
+<section class="detail" id="bothBlack()">
+<h3>bothBlack</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">bothBlack</span>()</div>
+<div class="block">Выводит сообщение "И у вас и у дилера блэкджек, ничья D:"</div>
 </section>
 </li>
 </ul>
