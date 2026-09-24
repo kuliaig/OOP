@@ -12,12 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class GameTest {
 
-    private Game game;
-    private Card two;
-    private Card three;
     private Card five;
     private Card seven;
-    private Card eight;
     private Card ten;
     private Card jack;
     private Card king;
@@ -25,12 +21,8 @@ class GameTest {
 
     @BeforeEach
     void set() {
-        game = new Game(1);
-        two = new Card(Rank.TWO, Suit.CLUBS);
-        three = new Card(Rank.THREE, Suit.DIAMONDS);
         five = new Card(Rank.FIVE, Suit.SPADES);
         seven = new Card(Rank.SEVEN, Suit.HEARTS);
-        eight = new Card(Rank.EIGHT, Suit.SPADES);
         ten = new Card(Rank.TEN, Suit.DIAMONDS);
         jack = new Card(Rank.JACK, Suit.SPADES);
         king = new Card(Rank.KING, Suit.HEARTS);
@@ -149,5 +141,27 @@ class GameTest {
 
         RoundResult result = game.playRound();
         assertEquals(RoundResult.PLAYER_WIN, result);
+    }
+
+    @Test
+    void testStartGame() {
+        Deck deck = new Deck(0);
+
+        for (int i = 0; i < 11; i++) {
+            deck.addCard(new Card(Rank.TWO, Suit.CLUBS));
+        }
+
+        deck.addCard(new Card(Rank.SIX, Suit.HEARTS));
+        deck.addCard(new Card(Rank.KING, Suit.HEARTS));
+        deck.addCard(new Card(Rank.FIVE, Suit.SPADES));
+        deck.addCard(new Card(Rank.ACE, Suit.SPADES));
+
+        setInput("0\n0\n");
+
+        Game game = new Game(deck, 1);
+        game.startGame();
+
+        assertEquals(1, game.getPlayersWin());
+        assertEquals(0, game.getDealersWin());
     }
 }
