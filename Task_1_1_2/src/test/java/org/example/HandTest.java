@@ -1,6 +1,7 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -32,11 +33,11 @@ class HandTest {
         assertEquals(0, hand.getScore());
         hand.addCard(twoSpades);
         hand.addCard(closedSevenDiamonds);
-        assertEquals(2, hand.getScore());
+        assertEquals(9, hand.getScore());
         hand.addCard(aceClubs);
-        assertEquals(13, hand.getScore());
+        assertEquals(20, hand.getScore());
         hand.addCard(jackHearts);
-        assertEquals(13, hand.getScore());
+        assertEquals(20, hand.getScore());
     }
 
     @Test
@@ -53,5 +54,35 @@ class HandTest {
         assertEquals("[Двойка Пики (2), Туз Трефы (11)]", hand.toString());
         hand.addCard(jackHearts);
         assertEquals("[Двойка Пики (2), Туз Трефы (1), Валет Червы (10)]", hand.toString());
+    }
+
+    @Test
+    void testIsBlackJack() {
+        hand.addCard(aceClubs);
+        assertFalse(hand.isBlackjack());
+        hand.addCard(jackHearts);
+        assertTrue(hand.isBlackjack());
+    }
+
+    @Test
+    void testIsTwentyOne() {
+        hand.addCard(aceClubs);
+        assertFalse(hand.isTwentyOne());
+        hand.addCard(jackHearts);
+        assertTrue(hand.isTwentyOne());
+        hand.addCard(twoSpades);
+        assertFalse(hand.isTwentyOne());
+    }
+
+    @Test
+    void testIsBust() {
+        hand.addCard(jackHearts);
+        assertFalse(hand.isBust());
+        hand.addCard(aceClubs);
+        assertFalse(hand.isBust());
+        hand.addCard(jackHearts);
+        assertFalse(hand.isBust());
+        hand.addCard(jackHearts);
+        assertTrue(hand.isBust());
     }
 }

@@ -27,6 +27,10 @@ public class Deck {
         Collections.shuffle(decks);
     }
 
+    void addCard(Card card) {
+        decks.add(card);
+    }
+
     /**
      * Размер колоды в данный момент.
      *

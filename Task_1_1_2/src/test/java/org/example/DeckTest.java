@@ -24,4 +24,12 @@ class DeckTest {
         Card card2 = deck.getCard();
         assertEquals(50, deck.getSize());
     }
+
+    @Test
+    void addCard() {
+        Deck deck = new Deck(1);
+        Card card = new Card(Rank.FIVE, Suit.CLUBS);
+        deck.addCard(card);
+        assertEquals(card, deck.getCard());
+    }
 }

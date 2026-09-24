@@ -7,7 +7,14 @@ import java.util.Scanner;
  */
 public class OutInput {
 
-    private static final Scanner SCANNER = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
+
+    /**
+     * Сбрасывает сканер
+     */
+    static void resetScanner() {
+        scanner = new Scanner(System.in);
+    }
 
     /**
      * Приветствие пользователя.
@@ -21,14 +28,14 @@ public class OutInput {
      *
      * @param countRound номер раунда
      */
-    public static void startRound(int countRound) {
+    public static void sayStartRound(int countRound) {
         System.out.println("Раунд " + countRound);
     }
 
     /**
      * Выводит сообщение о раздаче карт.
      */
-    public static void giveCards() {
+    public static void sayGiveCards() {
         System.out.println("Дилер раздал карты");
     }
 
@@ -68,7 +75,7 @@ public class OutInput {
     /**
      * Вывод надписи Ваш ход.
      */
-    public static void yourMove() {
+    public static void printYourMove() {
         System.out.println("Ваш ход");
         System.out.println("-------");
     }
@@ -76,7 +83,7 @@ public class OutInput {
     /**
      * Вывод надписи Ход дилера.
      */
-    public static void dealersMove() {
+    public static void printDealersMove() {
         System.out.println("Ход дилера");
         System.out.println("-------");
     }
@@ -84,40 +91,25 @@ public class OutInput {
     /**
      * Вывод в конце раунда.
      *
-     * @param usersWin выиграл ли пользователь
+     * @param result результат раунда
      * @param usersScore счет пользователя (сколько раундов выиграл)
      * @param dealersScore счет дилера
      */
-    public static void endRound(boolean usersWin, int usersScore, int dealersScore) {
-        if (usersWin) {
-            if (usersScore > dealersScore) {
-                System.out.println("Вы выиграли раунд! Счет " + usersScore + ":"
+    public static void printEndRound(RoundResult result, int usersScore, int dealersScore) {
+        switch (result) {
+            case PLAYER_WIN:
+                System.out.println("Вы выиграли раунд! Счёт " + usersScore + ":"
                         + dealersScore + " в вашу пользу.");
-                System.out.println(" ");
-            } else if (usersScore == dealersScore) {
-                System.out.println("Вы выиграли раунд! Счет " + usersScore + ":"
-                        + dealersScore + ", ничья.");
-                System.out.println(" ");
-            } else {
-                System.out.println("Вы выиграли раунд! Счет " + usersScore + ":"
+                break;
+            case DEALER_WIN:
+                System.out.println("Вы проиграли раунд! Счёт " + usersScore + ":"
                         + dealersScore + " в пользу дилера.");
-                System.out.println(" ");
-            }
-        } else {
-            if (usersScore > dealersScore) {
-                System.out.println("Вы проиграли раунд! Счет " + usersScore + ":"
-                        + dealersScore + " в вашу пользу.");
-                System.out.println(" ");
-            } else if (usersScore == dealersScore) {
-                System.out.println("Вы проиграли раунд! Счет " + usersScore + ":"
-                        + dealersScore + ", ничья.");
-                System.out.println(" ");
-            } else {
-                System.out.println("Вы проиграли раунд! Счет " + usersScore + ":"
-                        + dealersScore + " в пользу дилера.");
-                System.out.println(" ");
-            }
+                break;
+            case DRAW:
+                System.out.println("Ничья! Счёт " + usersScore + ":" + dealersScore);
+                break;
         }
+        System.out.println();
     }
 
     /**
@@ -125,6 +117,7 @@ public class OutInput {
      */
     public static void sayTooMuch() {
         System.out.println("Вы взяли слишком много карт, перебор :(");
+        printEmpty();
     }
 
     /**
@@ -152,13 +145,13 @@ public class OutInput {
         while (true) {
             System.out.println("Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
 
-            if (SCANNER.hasNextInt()) {
-                int choice = SCANNER.nextInt();
+            if (scanner.hasNextInt()) {
+                int choice = scanner.nextInt();
                 if (choice == 0 || choice == 1) {
                     return choice;
                 }
             } else {
-                SCANNER.next();
+                scanner.next();
             }
 
             System.out.println("Ошибка :( Вы ввели неправильный символ.");
@@ -175,13 +168,13 @@ public class OutInput {
             System.out.println("Введите \"1\", чтобы продолжить игру, и \"0\", "
                     + "чтобы остановиться...");
 
-            if (SCANNER.hasNextInt()) {
-                int choice = SCANNER.nextInt();
+            if (scanner.hasNextInt()) {
+                int choice = scanner.nextInt();
                 if (choice == 0 || choice == 1) {
                     return choice;
                 }
             } else {
-                SCANNER.next();
+                scanner.next();
             }
 
             System.out.println("Ошибка :( Вы ввели неправильный символ.");
@@ -207,5 +200,26 @@ public class OutInput {
      */
     public static void dealerOpen(Card card) {
         System.out.println("Дилер открывает карту " + card.toRussian(false));
+    }
+
+    /**
+     * Выводит сообщение "У дилера блэкджек, ты проиграл :("
+     */
+    public static void dealerBlack() {
+        System.out.println("У дилера блэкджек, вы проиграли :(");
+    }
+
+    /**
+     * Выводит сообщение "Поздравляю, у вас блэкджек!"
+     */
+    public static void userBlack() {
+        System.out.println("Поздравляю, у вас блэкджек!");
+    }
+
+    /**
+     * Выводит сообщение "И у вас и у дилера блэкджек, ничья D:"
+     */
+    public static void bothBlack() {
+        System.out.println("И у вас и у дилера блэкджек, ничья D:");
     }
 }

@@ -40,12 +40,10 @@ public class Hand {
         int countAce = 0;
 
         for (Card card : cards) {
-            if (card.isOpen()) {
-                sum += card.getValue();
-                if (card.getRank() == Rank.ACE) {
-                    countAce++;
-                }
-            }
+           sum += card.getValue();
+           if (card.getRank() == Rank.ACE) {
+               countAce++;
+           }
         }
 
         while (sum > 21 && countAce > 0) {
@@ -57,12 +55,39 @@ public class Hand {
     }
 
     /**
+     * Проверяет, блэкджек у игрока или нет.
+     *
+     * @return true если да иначе false
+     */
+    public boolean isBlackjack() {
+        return cards.size() == 2 && getScore() == 21;
+    }
+
+    /**
+     * Проверяет, перебор или нет.
+     *
+     * @return true, если перебор
+     */
+    public boolean isBust() {
+        return getScore() > 21;
+    }
+
+    /**
      * Открывает все карты (для дилера).
      */
     public void openAllCards() {
         for (Card card : cards) {
             card.setOpen(true);
         }
+    }
+
+    /**
+     * Проверяет, равна ли сумма 21.
+     *
+     * @return true, если 21
+     */
+    public boolean isTwentyOne() {
+        return getScore() == 21;
     }
 
     /**
