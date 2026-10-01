@@ -30,4 +30,9 @@ public class Number extends Expression {
     public String toString() {
         return String.valueOf(value);
     }
+
+    @Override
+    public Expression simplify() {
+        return this;
+    }
 }

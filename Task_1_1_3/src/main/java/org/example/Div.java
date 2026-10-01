@@ -39,4 +39,16 @@ public class Div extends Expression {
     public String toString() {
         return "(" + first + "/" + second + ")";
     }
+
+    @Override
+    public Expression simplify() {
+        Expression simpleFirst = first.simplify();
+        Expression simpleSecond = second.simplify();
+
+        if (simpleFirst instanceof Number && simpleSecond instanceof Number) {
+            return new Number(simpleFirst.eval(null) / simpleSecond.eval(null));
+        }
+
+        return new Div(simpleFirst, simpleSecond);
+    }
 }

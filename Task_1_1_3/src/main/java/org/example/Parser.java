@@ -6,12 +6,12 @@ package org.example;
 public class Parser {
 
     /**
-     * Парсит строку.
+     * Парсит строку (для выражений со строгими скобками).
      *
      * @param input строка
      * @return распарсенное выражение
      */
-    public Expression parse(String input) {
+    public Expression parseWithBrackets(String input) {
         input = input.trim().replace(" ", "");
 
         if (input.isEmpty()) {
@@ -32,8 +32,8 @@ public class Parser {
 
         String withoutBrackets = input.substring(1, input.length() - 1);
         int signIndex = indexOfSign(withoutBrackets);
-        Expression first = parse(withoutBrackets.substring(0, signIndex));
-        Expression second = parse(withoutBrackets.substring(signIndex + 1));
+        Expression first = parseWithBrackets(withoutBrackets.substring(0, signIndex));
+        Expression second = parseWithBrackets(withoutBrackets.substring(signIndex + 1));
 
         switch (withoutBrackets.charAt(signIndex)) {
             case '+':
@@ -47,6 +47,59 @@ public class Parser {
             default:
                 throw new IllegalArgumentException("Ошибка в записи выражения: " + input);
         }
+    }
+
+    /**
+     * Парсит строку (для выражений без скобок).
+     *
+     * @param input строка
+     * @return распарсенное выражение
+     */
+    public Expression parse(String input) {
+        input = input.trim().replace(" ", "");
+
+        if (input.isEmpty()) {
+            throw new IllegalArgumentException("Пустая строка");
+        }
+
+        if (input.charAt(0) == '(' && findMatchBracket(input, 0) == input.length() - 1) {
+            return parse(input.substring(1, input.length() - 1));
+        }
+
+        if (isNumber(input)) {
+            return new Number(Integer.parseInt(input));
+        }
+
+        if (isVariable(input)) {
+            return new Variable(input);
+        }
+
+        int indexOfSign = indexOfAddSub(input);
+        if (indexOfSign != -1) {
+            String first = input.substring(0, indexOfSign);
+            String second = input.substring(indexOfSign + 1);
+
+            char operation = input.charAt(indexOfSign);
+
+            switch (operation) {
+                case '+': return new Add(parse(first), parse(second));
+                case '-': return new Sub(parse(first), parse(second));
+            }
+        }
+
+        indexOfSign = indexOfMulDiv(input);
+        if (indexOfSign != -1) {
+            String left = input.substring(0, indexOfSign);
+            String right = input.substring(indexOfSign + 1);
+            char operation = input.charAt(indexOfSign);
+
+            switch (operation) {
+                case '*': return new Mul(parse(left), parse(right));
+                case '/': return new Div(parse(left), parse(right));
+            }
+        }
+
+        throw new IllegalArgumentException("Ошибка в записи выражения: " + input);
     }
 
     /**
@@ -115,5 +168,53 @@ public class Parser {
         }
 
         throw new IllegalArgumentException("Не найдена операция в: " + str);
+    }
+
+    /**
+     * Находит индекс знака +-.
+     *
+     * @param str строка
+     * @return индекс знака
+     */
+    private int indexOfAddSub(String str) {
+        int depth = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+
+            if (c == '(') {
+                depth++;
+            } else if (c == ')') {
+                depth--;
+            } else if (depth == 0 && (c == '+' || c == '-')) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
+     * Находит индекс знака +-.
+     *
+     * @param str строка
+     * @return индекс знака
+     */
+    private int indexOfMulDiv(String str) {
+        int depth = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+
+            if (c == '(') {
+                depth++;
+            } else if (c == ')') {
+                depth--;
+            } else if (depth == 0 && (c == '*' || c == '/')) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

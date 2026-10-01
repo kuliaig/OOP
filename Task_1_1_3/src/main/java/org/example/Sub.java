@@ -33,4 +33,20 @@ public class Sub extends Expression {
     public String toString() {
         return "(" + first + "-" + second + ")";
     }
+
+    @Override
+    public Expression simplify() {
+        Expression simpleFirst = first.simplify();
+        Expression simpleSecond = second.simplify();
+
+        if (simpleFirst.toString().equals(simpleSecond.toString())) {
+            return new Number(0);
+        }
+
+        if (simpleFirst instanceof Number && simpleSecond instanceof Number) {
+            return new Number(simpleFirst.eval(null) + simpleSecond.eval(null));
+        }
+
+        return new Add(simpleFirst, simpleSecond);
+    }
 }

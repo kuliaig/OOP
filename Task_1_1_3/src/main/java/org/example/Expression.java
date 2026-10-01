@@ -27,4 +27,11 @@ public abstract class Expression {
      * @return значение выражения
      */
     public abstract int eval(ValueOfVar variables);
+
+    /**
+     * Упрощает выражение.
+     *
+     * @return упрощенное выражение
+     */
+    public abstract Expression simplify();
 }

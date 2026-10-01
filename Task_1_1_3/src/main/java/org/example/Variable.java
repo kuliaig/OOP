@@ -33,4 +33,9 @@ public class Variable extends Expression {
     public String toString() {
         return name;
     }
+
+    @Override
+    public Expression simplify() {
+        return this;
+    }
 }

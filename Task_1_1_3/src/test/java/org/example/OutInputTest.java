@@ -37,8 +37,18 @@ class OutInputTest {
     }
 
     @Test
-    void testExample() {
+    void testExampleWithBrackets() {
         setInput("(3+(2*x))\nx = 10\nx\n\n");
+        OutInput.printProg();
+
+        String output = out.toString();
+        assertTrue(output.contains("(3+(2*x))"));
+        assertTrue(output.contains("23"));
+    }
+
+    @Test
+    void testExample() {
+        setInput("3+2*x\nx = 10\nx\n\n");
         OutInput.printProg();
 
         String output = out.toString();

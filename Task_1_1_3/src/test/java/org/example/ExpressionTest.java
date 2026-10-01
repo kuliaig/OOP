@@ -48,4 +48,44 @@ class ExpressionTest {
         assertDoesNotThrow(expr::print);
         assertDoesNotThrow(second::print);
     }
+
+    @Test
+    void simplifyNumberComplex() {
+        assertEquals("22",
+                new Mul(new Add(new Number(5), new Number(6)), new Number(2))
+                        .simplify().toString());
+    }
+
+    @Test
+    void simplifyMulZeroOne() {
+        assertEquals("0",
+                new Mul(new Number(0), new Variable("y")).simplify().toString());
+    }
+
+    @Test
+    void simplifyMulZeroTwo() {
+        assertEquals("0",
+                new Mul(new Variable("x"), new Number(0)).simplify().toString());
+    }
+
+    @Test
+    void simplifyMulByOne() {
+        assertEquals("x",
+                new Mul(new Variable("x"), new Number(1)).simplify().toString());
+    }
+
+    @Test
+    void simplifySubSame() {
+        assertEquals("0",
+                new Sub(new Variable("x"), new Variable("x")).simplify().toString());
+    }
+
+    @Test
+    void simplifyOriginal() {
+        Expression original = new Mul(new Number(0), new Variable("x"));
+        Expression simplified = original.simplify();
+
+        assertEquals("(0*x)", original.toString());
+        assertEquals("0", simplified.toString());
+    }
 }
