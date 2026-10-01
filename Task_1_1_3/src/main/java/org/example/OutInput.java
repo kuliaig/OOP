@@ -22,7 +22,8 @@ public class OutInput {
     public static void printProg() {
         Parser parser = new Parser();
 
-        System.out.println("При записи арифметических выражений убедитесь, что каждый оператор отделен скобками: (3+(5*6))");
+        System.out.println("При записи арифметических выражений убедитесь, "
+                + "что каждый оператор отделен скобками: (3+(5*6))");
 
         while (true) {
             try {

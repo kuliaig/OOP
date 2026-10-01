@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Означивание переменных
+ * Означивание переменных.
  */
 public class ValueOfVar {
 

@@ -44,9 +44,9 @@ public class Parser {
                 return new Mul(first, second);
             case '/':
                 return new Div(first, second);
+            default:
+                throw new IllegalArgumentException("Ошибка в записи выражения: " + input);
         }
-
-        throw new IllegalArgumentException("Ошибка в записи выражения: " + input);
     }
 
     /**
