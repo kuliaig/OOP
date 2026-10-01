@@ -82,8 +82,12 @@ public class Parser {
             char operation = input.charAt(indexOfSign);
 
             switch (operation) {
-                case '+': return new Add(parse(first), parse(second));
-                case '-': return new Sub(parse(first), parse(second));
+                case '+':
+                    return new Add(parse(first), parse(second));
+                case '-':
+                    return new Sub(parse(first), parse(second));
+                default:
+                    throw new IllegalArgumentException("Неизвестная операция");
             }
         }
 
@@ -94,8 +98,12 @@ public class Parser {
             char operation = input.charAt(indexOfSign);
 
             switch (operation) {
-                case '*': return new Mul(parse(left), parse(right));
-                case '/': return new Div(parse(left), parse(right));
+                case '*':
+                    return new Mul(parse(left), parse(right));
+                case '/':
+                    return new Div(parse(left), parse(right));
+                default:
+                    throw new IllegalArgumentException("Неизвестная операция");
             }
         }
 

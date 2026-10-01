@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-
 /**
  * Тесты для всех типов expression.
  */
@@ -87,5 +86,24 @@ class ExpressionTest {
 
         assertEquals("(0*x)", original.toString());
         assertEquals("0", simplified.toString());
+    }
+
+    @Test
+    void simplifySubNumbers() {
+        assertEquals("7",
+                new Sub(new Number(10), new Number(3)).simplify().toString());
+    }
+
+    @Test
+    void simplifyDivNumbers() {
+        assertEquals("5",
+                new Div(new Number(20), new Number(4)).simplify().toString());
+    }
+
+    @Test
+    void simplifyDivNested() {
+        assertEquals("1",
+                new Div(new Add(new Number(2), new Number(3)), new Number(5))
+                        .simplify().toString());
     }
 }

@@ -40,7 +40,8 @@ public class OutInput {
                 String varsInput = scanner.nextLine();
                 System.out.println(e + " = " + e.eval(new ValueOfVar(varsInput)));
 
-                System.out.print("Введите переменную, по которой хотите дифференцировать выражение: ");
+                System.out.print("Введите переменную, по которой вы хотите "
+                        + "дифференцировать выражение: ");
                 String var = scanner.nextLine();
                 System.out.println("Производная: " + e.derivative(var));
 
