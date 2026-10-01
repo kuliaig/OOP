@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 /**
  * Тесты для всех типов expression.
@@ -39,5 +40,11 @@ class ExpressionTest {
         assertEquals(second.eval(new ValueOfVar(" ")), 4);
         Expression third = new Div(new Number(1), new Number(0));
         assertThrows(ArithmeticException.class, () -> third.eval(new ValueOfVar(" ")));
+    }
+
+    @Test
+    void printTest() {
+        assertDoesNotThrow(e::print);
+        assertDoesNotThrow(second::print);
     }
 }
