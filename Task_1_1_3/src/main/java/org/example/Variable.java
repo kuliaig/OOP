@@ -38,4 +38,23 @@ public class Variable extends Expression {
     public Expression simplify() {
         return this;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Variable)) {
+            return false;
+        }
+
+        Variable variable = (Variable) obj;
+        return name.equals(variable.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
 }

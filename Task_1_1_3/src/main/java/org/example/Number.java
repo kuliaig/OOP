@@ -35,4 +35,23 @@ public class Number extends Expression {
     public Expression simplify() {
         return this;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Number)) {
+            return false;
+        }
+
+        Number number = (Number) obj;
+        return value == number.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(value);
+    }
 }

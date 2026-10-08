@@ -71,4 +71,14 @@ class OutInputTest {
 
         assertDoesNotThrow(OutInput::printProg);
     }
+
+    @Test
+    void testSub() {
+        setInput("10-3-2\n \nx\n\n");
+        OutInput.printProg();
+
+        String output = out.toString();
+        assertTrue(output.contains("((10-3)-2)"));
+        assertTrue(output.contains("5"));
+    }
 }

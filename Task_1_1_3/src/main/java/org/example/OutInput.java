@@ -36,7 +36,7 @@ public class OutInput {
 
                 Expression e = parser.parse(input);
 
-                System.out.print("Введите значения переменных в формате x=13; y=15");
+                System.out.print("Введите значения переменных в формате x=13; y=15: ");
                 String varsInput = scanner.nextLine();
                 System.out.println(e + " = " + e.eval(new ValueOfVar(varsInput)));
 

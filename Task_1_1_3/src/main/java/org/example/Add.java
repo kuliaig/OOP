@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 /**
  * Сумма.
  */
@@ -44,5 +46,24 @@ public class Add extends Expression {
         }
 
         return new Add(simpleFirst, simpleSecond);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Add)) {
+            return false;
+        }
+
+        Add add = (Add) obj;
+        return first.equals(add.first) && second.equals(add.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }

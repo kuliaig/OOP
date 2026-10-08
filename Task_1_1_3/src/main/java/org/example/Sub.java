@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 /**
  * Разность.
  */
@@ -39,7 +41,7 @@ public class Sub extends Expression {
         Expression simpleFirst = first.simplify();
         Expression simpleSecond = second.simplify();
 
-        if (simpleFirst.toString().equals(simpleSecond.toString())) {
+        if (simpleFirst.equals(simpleSecond)) {
             return new Number(0);
         }
 
@@ -48,5 +50,24 @@ public class Sub extends Expression {
         }
 
         return new Sub(simpleFirst, simpleSecond);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Sub)) {
+            return false;
+        }
+
+        Sub sub = (Sub) obj;
+        return first.equals(sub.first) && second.equals(sub.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 /**
  * Произведение.
  */
@@ -68,5 +70,22 @@ public class Mul extends Expression {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Mul)) {
+            return false;
+        }
+        Mul mul = (Mul) obj;
+        return first.equals(mul.first) && second.equals(mul.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }

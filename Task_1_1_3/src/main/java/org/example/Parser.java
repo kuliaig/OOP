@@ -186,6 +186,7 @@ public class Parser {
      */
     private int indexOfAddSub(String str) {
         int depth = 0;
+        int result = -1;
 
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
@@ -195,11 +196,11 @@ public class Parser {
             } else if (c == ')') {
                 depth--;
             } else if (depth == 0 && (c == '+' || c == '-')) {
-                return i;
+                result = i;
             }
         }
 
-        return -1;
+        return result;
     }
 
     /**
@@ -210,6 +211,7 @@ public class Parser {
      */
     private int indexOfMulDiv(String str) {
         int depth = 0;
+        int result = -1;
 
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
@@ -219,10 +221,10 @@ public class Parser {
             } else if (c == ')') {
                 depth--;
             } else if (depth == 0 && (c == '*' || c == '/')) {
-                return i;
+               result = i;
             }
         }
 
-        return -1;
+        return result;
     }
 }

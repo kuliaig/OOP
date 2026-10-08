@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 /**
  * Деление.
  */
@@ -46,9 +48,32 @@ public class Div extends Expression {
         Expression simpleSecond = second.simplify();
 
         if (simpleFirst instanceof Number && simpleSecond instanceof Number) {
-            return new Number(simpleFirst.eval(null) / simpleSecond.eval(null));
+            int den = simpleSecond.eval(null);
+            if (den == 0) {
+                throw new ArithmeticException("Деление на ноль");
+            }
+            return new Number(simpleFirst.eval(null) / den);
         }
 
         return new Div(simpleFirst, simpleSecond);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (!(obj instanceof Div)) {
+            return false;
+        }
+
+        Div div = (Div) obj;
+        return first.equals(div.first) && second.equals(div.second);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(first, second);
     }
 }
