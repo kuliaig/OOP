@@ -135,6 +135,7 @@ class ExpressionTest {
         Expression first = new Number(5);
         Expression second = new Number(7);
         Expression third = new Variable("x");
+
         assertTrue(new Add(first, second).equals(new Add(first, second)));
         assertFalse(new Add(first, second).equals(new Add(third, second)));
         assertTrue(new Sub(first, second).equals(new Sub(first, second)));
@@ -145,5 +146,16 @@ class ExpressionTest {
         assertFalse(new Div(first, second).equals(new Div(third, second)));
         assertFalse(new Add(first, second).equals(new Sub(first, second)));
         assertFalse(new Mul(first, second).equals(new Div(first, second)));
+    }
+
+    @Test
+    void variableHashCode() {
+        assertEquals(new Variable("x").hashCode(), new Variable("x").hashCode());
+    }
+
+    @Test
+    void variableDerivative() {
+        assertEquals("1", new Variable("x").derivative("x").toString());
+        assertEquals("0", new Variable("x").derivative("y").toString());
     }
 }
