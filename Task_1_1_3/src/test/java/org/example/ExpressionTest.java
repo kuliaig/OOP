@@ -51,6 +51,12 @@ class ExpressionTest {
     }
 
     @Test
+    void simplifyVar() {
+        Expression var = new Variable("x");
+        assertEquals(var, var.simplify());
+    }
+
+    @Test
     void simplifyNumberComplex() {
         assertEquals("22",
                 new Mul(new Add(new Number(5), new Number(6)), new Number(2))
