@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Тесты для всех типов expression.
@@ -105,5 +107,37 @@ class ExpressionTest {
         assertEquals("1",
                 new Div(new Add(new Number(2), new Number(3)), new Number(5))
                         .simplify().toString());
+    }
+
+    @Test
+    void simplifyDivNull() {
+        Expression third = new Div(new Number(1), new Number(0));
+        assertThrows(ArithmeticException.class, () -> third.simplify());
+    }
+
+    @Test
+    void equalNumVarTest() {
+        assertTrue(new Number(5).equals(new Number(5)));
+        assertFalse(new Number(5).equals(new Number(7)));
+        assertFalse(new Number(5).equals(new Variable("x")));
+        assertTrue(new Variable("x").equals(new Variable("x")));
+        assertFalse(new Variable("x").equals(new Variable("y")));
+    }
+
+    @Test
+    void equalOperTest() {
+        Expression first = new Number(5);
+        Expression second = new Number(7);
+        Expression third = new Variable("x");
+        assertTrue(new Add(first, second).equals(new Add(first, second)));
+        assertFalse(new Add(first, second).equals(new Add(third, second)));
+        assertTrue(new Sub(first, second).equals(new Sub(first, second)));
+        assertFalse(new Sub(first, second).equals(new Sub(third, second)));
+        assertTrue(new Mul(first, second).equals(new Mul(first, second)));
+        assertFalse(new Mul(first, second).equals(new Mul(third, second)));
+        assertTrue(new Div(first, second).equals(new Div(first, second)));
+        assertFalse(new Div(first, second).equals(new Div(third, second)));
+        assertFalse(new Add(first, second).equals(new Sub(first, second)));
+        assertFalse(new Mul(first, second).equals(new Div(first, second)));
     }
 }
