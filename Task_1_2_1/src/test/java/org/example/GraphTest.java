@@ -70,6 +70,22 @@ class GraphTest {
         assertTrue(result.contains("7"));
     }
 
+    @ParameterizedTest
+    @MethodSource("createGraphs")
+    void testLoop(Graph graph) {
+        graph.addEdge(5, 5);
+        assertTrue(graph.getNeighbours(5).contains(5));
+    }
+
+    @ParameterizedTest
+    @MethodSource("createGraphs")
+    void testMaxSize(Graph graph) {
+        for (int i = 0; i < 20; i++) {
+            graph.addEdge(i, i + 1);
+        }
+        assertEquals(21, graph.getAllVertices().size());
+    }
+
     @Test
     void testEqualsSameImplementation() {
         Graph a = new AdjacencyList();
