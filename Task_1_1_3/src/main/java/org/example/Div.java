@@ -48,11 +48,11 @@ public class Div extends Expression {
         Expression simpleSecond = second.simplify();
 
         if (simpleFirst instanceof Number && simpleSecond instanceof Number) {
-            int den = simpleSecond.eval(null);
+            int den = simpleSecond.eval(ValueOfVar.EMPTY);
             if (den == 0) {
                 throw new ArithmeticException("Деление на ноль");
             }
-            return new Number(simpleFirst.eval(null) / den);
+            return new Number(simpleFirst.eval(ValueOfVar.EMPTY) / den);
         }
 
         return new Div(simpleFirst, simpleSecond);

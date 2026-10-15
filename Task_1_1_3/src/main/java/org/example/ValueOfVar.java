@@ -8,6 +8,11 @@ import java.util.Map;
  */
 public class ValueOfVar {
 
+    /**
+     * Если переменных для означивание нет.
+     */
+    public static final ValueOfVar EMPTY = new ValueOfVar("");
+
     private final Map<String, Integer> values = new HashMap<>();
 
     /**

@@ -42,7 +42,7 @@ public class Mul extends Expression {
         Expression simpleFirst = first.simplify();
         Expression simpleSecond = second.simplify();
 
-        final ValueOfVar empty = new ValueOfVar("");
+        final ValueOfVar empty = ValueOfVar.EMPTY;
 
         if (isEq(simpleFirst, 0) || isEq(simpleSecond, 0)) {
             return new Number(0);
@@ -64,7 +64,7 @@ public class Mul extends Expression {
     }
 
     private boolean isEq(Expression expr, int num) {
-        final ValueOfVar empty = new ValueOfVar("");
+        final ValueOfVar empty = ValueOfVar.EMPTY;
 
         if (expr instanceof Number && expr.eval(empty) == num) {
             return true;

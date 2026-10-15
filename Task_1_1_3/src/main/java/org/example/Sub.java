@@ -46,7 +46,7 @@ public class Sub extends Expression {
         }
 
         if (simpleFirst instanceof Number && simpleSecond instanceof Number) {
-            return new Number(simpleFirst.eval(null) - simpleSecond.eval(null));
+            return new Number(simpleFirst.eval(ValueOfVar.EMPTY) - simpleSecond.eval(ValueOfVar.EMPTY));
         }
 
         return new Sub(simpleFirst, simpleSecond);
