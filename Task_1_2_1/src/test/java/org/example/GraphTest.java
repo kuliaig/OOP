@@ -59,6 +59,19 @@ class GraphTest {
 
     @ParameterizedTest
     @MethodSource("createGraphs")
+    void testDelVertexIncid(Graph graph) {
+        graph.addEdge(0, 1);
+        graph.addEdge(1, 2);
+
+        graph.delVertex(1);
+
+        assertFalse(graph.getAllVertices().contains(1));
+        assertTrue(graph.getNeighbours(0).isEmpty());
+        assertTrue(graph.getNeighbours(2).isEmpty());
+    }
+
+    @ParameterizedTest
+    @MethodSource("createGraphs")
     void testToString(Graph graph) {
         graph.addEdge(5, 7);
 

@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Реализация графа через список смежности.
  */
-public class AdjacencyList implements Graph {
+public class AdjacencyList extends AbstractGraph {
 
     private final Map<Integer, List<Integer>> list = new HashMap<>();
 
@@ -66,41 +66,5 @@ public class AdjacencyList implements Graph {
             str.append(v).append(": ").append(getNeighbours(v)).append("\n");
         }
         return str.toString();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Graph other)) {
-            return false;
-        }
-
-        Set<Integer> thisVertices = getAllVertices();
-        Set<Integer> otherVertices = other.getAllVertices();
-
-        if (!thisVertices.equals(otherVertices)) {
-            return false;
-        }
-
-        for (int v : thisVertices) {
-            List<Integer> thisNeighbors = new ArrayList<>(getNeighbours(v));
-            List<Integer> otherNeighbors = new ArrayList<>(other.getNeighbours(v));
-
-            Collections.sort(thisNeighbors);
-            Collections.sort(otherNeighbors);
-
-            if (!thisNeighbors.equals(otherNeighbors)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return getAllVertices().hashCode();
     }
 }

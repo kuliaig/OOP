@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * Реализация графа через матрицу инцидентности.
  */
-public class IncidenceMatrix implements Graph {
+public class IncidenceMatrix extends AbstractGraph {
     private int[][] matrix;
     private boolean[] exists;
     private int usedEdges;
@@ -71,7 +71,15 @@ public class IncidenceMatrix implements Graph {
         exists[index] = false;
 
         for (int i = 0; i < usedEdges; i++) {
-            matrix[index][i] = 0;
+            if (matrix[index][i] != 0) {
+                for (int j = 0; j < vertexSize; j++) {
+                    if (j != index && matrix[j][i] != 0) {
+                        matrix[j][i] = 0;
+                        break;
+                    }
+                }
+                matrix[index][i] = 0;
+            }
         }
     }
 
@@ -185,41 +193,5 @@ public class IncidenceMatrix implements Graph {
             str.append(v).append(": ").append(getNeighbours(v)).append("\n");
         }
         return str.toString();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Graph other)) {
-            return false;
-        }
-
-        Set<Integer> thisVertices = getAllVertices();
-        Set<Integer> otherVertices = other.getAllVertices();
-
-        if (!thisVertices.equals(otherVertices)) {
-            return false;
-        }
-
-        for (int v : thisVertices) {
-            List<Integer> thisNeighbors = new ArrayList<>(getNeighbours(v));
-            List<Integer> otherNeighbors = new ArrayList<>(other.getNeighbours(v));
-
-            Collections.sort(thisNeighbors);
-            Collections.sort(otherNeighbors);
-
-            if (!thisNeighbors.equals(otherNeighbors)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        return getAllVertices().hashCode();
     }
 }

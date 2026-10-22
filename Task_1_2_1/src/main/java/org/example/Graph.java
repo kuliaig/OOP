@@ -13,14 +13,14 @@ public interface Graph {
      *
      * @param id номер вершины.
      */
-    public void addVertex(int id);
+    void addVertex(int id);
 
     /**
      * Удаляет вершину из графа.
      *
      * @param id номер вершины.
      */
-    public void delVertex(int id);
+    void delVertex(int id);
 
     /**
      * Добавляет ребро в граф.
@@ -36,7 +36,7 @@ public interface Graph {
      * @param from вершина, откуда идет ребро
      * @param to вершина, куда идет ребро
      */
-    public void delEdge(int from, int to);
+    void delEdge(int from, int to);
 
     /**
      * Возвращает список вершин-соседей.
@@ -44,19 +44,19 @@ public interface Graph {
      * @param id вершина
      * @return список вершин-соседей
      */
-    public List<Integer> getNeighbours(int id);
+    List<Integer> getNeighbours(int id);
 
     /**
      * Возвращает список всех вершин графа.
      *
      * @return список вершин.
      */
-    public Set<Integer> getAllVertices();
+    Set<Integer> getAllVertices();
 
     /**
      * Читает граф из файла.
      *
      * @param path путь к файлу
      */
-    public void readFromFile(String path);
+    void readFromFile(String path);
 }
