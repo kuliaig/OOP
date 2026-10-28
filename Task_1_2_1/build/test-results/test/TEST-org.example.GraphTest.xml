@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.GraphTest" tests="27" skipped="0" failures="0" errors="0" timestamp="2026-10-14T03:00:00.909Z" hostname="COFFEECOW" time="0.277">
+  <properties/>
+  <testcase name="[1] " classname="org.example.GraphTest" time="0.046"/>
+  <testcase name="[2] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[3] " classname="org.example.GraphTest" time="0.002"/>
+  <testcase name="[1] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[2] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[3] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[1] " classname="org.example.GraphTest" time="0.003"/>
+  <testcase name="[2] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[3] " classname="org.example.GraphTest" time="0.002"/>
+  <testcase name="testHashSetNoDuplicates()" classname="org.example.GraphTest" time="0.003"/>
+  <testcase name="testHashCodeConsistency()" classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[1] " classname="org.example.GraphTest" time="0.002"/>
+  <testcase name="[2] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[3] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="testNotEqualsNullAndOtherClass()" classname="org.example.GraphTest" time="0.007"/>
+  <testcase name="[1] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[2] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[3] " classname="org.example.GraphTest" time="0.002"/>
+  <testcase name="[1] " classname="org.example.GraphTest" time="0.002"/>
+  <testcase name="[2] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[3] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="testNotEqualsDifferentEdges()" classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[1] " classname="org.example.GraphTest" time="0.002"/>
+  <testcase name="[2] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="[3] " classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="testEqualsAcrossImplementations()" classname="org.example.GraphTest" time="0.001"/>
+  <testcase name="testEqualsSameImplementation()" classname="org.example.GraphTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
