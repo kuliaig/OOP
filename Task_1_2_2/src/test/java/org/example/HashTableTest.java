@@ -3,9 +3,12 @@ package org.example;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ConcurrentModificationException;
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,6 +31,12 @@ class HashTableTest {
     void remove() {
         table.remove("hehe", 5);
         assertFalse(table.contains("hehe"));
+    }
+
+    @Test
+    void removeMissingKey() {
+        table.remove("nope", 1);
+        assertTrue(table.contains("hehe"));
     }
 
     @Test
@@ -77,7 +86,22 @@ class HashTableTest {
     }
 
     @Test
+    void iteratorThrowsCmeOnRemove() {
+        table.put("second", 2);
+        assertThrows(ConcurrentModificationException.class, () -> {
+            for (Entry<String, Integer> e : table) {
+                table.remove(e.getKey(), e.getValue());
+            }
+        });
+    }
+
+    @Test
     void testToString() {
         assertEquals("{hehe = 5}", table.toString());
+    }
+
+    @Test
+    void updateMissingKey() {
+        assertThrows(NoSuchElementException.class, () -> table.update("nope", 1));
     }
 }
