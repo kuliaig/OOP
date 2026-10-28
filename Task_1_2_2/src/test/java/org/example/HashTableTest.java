@@ -1,5 +1,6 @@
 package org.example;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -86,13 +87,34 @@ class HashTableTest {
     }
 
     @Test
-    void iteratorThrowsCmeOnRemove() {
+    void iteratorThrows() {
         table.put("second", 2);
         assertThrows(ConcurrentModificationException.class, () -> {
             for (Entry<String, Integer> e : table) {
                 table.remove(e.getKey(), e.getValue());
             }
         });
+    }
+
+    @Test
+    void iteratorDoesNotThrow() {
+        table.put("second", 2);
+        assertDoesNotThrow(() -> {
+            for (Entry<String, Integer> e : table) {
+                table.update(e.getKey(), 100);
+            }
+        });
+    }
+
+    @Test
+    void resize() {
+        HashTable<Integer, Integer> big = new HashTable<>();
+        for (int i = 0; i < 100; i++) {
+            big.put(i, i);
+        }
+        for (int i = 0; i < 100; i++) {
+            assertEquals(i, big.get(i));
+        }
     }
 
     @Test
