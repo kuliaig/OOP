@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.ParserTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2026-10-15T14:42:11.638Z" hostname="COFFEECOW" time="0.042">
+  <properties/>
+  <testcase name="testParseWithBracketsExpression()" classname="org.example.ParserTest" time="0.002"/>
+  <testcase name="testParseErrors()" classname="org.example.ParserTest" time="0.003"/>
+  <testcase name="testParseNumber()" classname="org.example.ParserTest" time="0.002"/>
+  <testcase name="testParseWithBracketsErrors()" classname="org.example.ParserTest" time="0.003"/>
+  <testcase name="testParseWithBracketsNumber()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseVariable()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseExpression()" classname="org.example.ParserTest" time="0.002"/>
+  <testcase name="testParseWithBracketsAdd()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseWithBracketsDiv()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseWithBracketsMul()" classname="org.example.ParserTest" time="0.002"/>
+  <testcase name="testParseWithBracketsSub()" classname="org.example.ParserTest" time="0.002"/>
+  <testcase name="testParseWithBracketsVariable()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseAdd()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseDiv()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseMul()" classname="org.example.ParserTest" time="0.001"/>
+  <testcase name="testParseSub()" classname="org.example.ParserTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
