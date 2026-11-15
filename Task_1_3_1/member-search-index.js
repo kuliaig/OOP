@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"org.example","c":"SubstringSearch","l":"find(String, String)","u":"find(java.lang.String,java.lang.String)"},{"p":"org.example","c":"SubstringSearch","l":"SubstringSearch()","u":"%3Cinit%3E()","k":"3"}];updateSearchResults();
