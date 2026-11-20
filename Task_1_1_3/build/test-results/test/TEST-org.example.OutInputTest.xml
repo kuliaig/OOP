@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.OutInputTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-15T14:42:11.611Z" hostname="COFFEECOW" time="0.026">
+  <properties/>
+  <testcase name="testExample()" classname="org.example.OutInputTest" time="0.012"/>
+  <testcase name="testSub()" classname="org.example.OutInputTest" time="0.003"/>
+  <testcase name="testError()" classname="org.example.OutInputTest" time="0.002"/>
+  <testcase name="testExit()" classname="org.example.OutInputTest" time="0.003"/>
+  <testcase name="testExampleWithBrackets()" classname="org.example.OutInputTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

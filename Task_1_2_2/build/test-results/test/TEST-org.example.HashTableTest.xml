@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.HashTableTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-28T04:13:52.243Z" hostname="COFFEECOW" time="0.164">
+  <properties/>
+  <testcase name="updateMissingKey()" classname="org.example.HashTableTest" time="0.089"/>
+  <testcase name="testToString()" classname="org.example.HashTableTest" time="0.009"/>
+  <testcase name="remove()" classname="org.example.HashTableTest" time="0.002"/>
+  <testcase name="resize()" classname="org.example.HashTableTest" time="0.001"/>
+  <testcase name="update()" classname="org.example.HashTableTest" time="0.002"/>
+  <testcase name="iteratorDoesNotThrow()" classname="org.example.HashTableTest" time="0.003"/>
+  <testcase name="iteratorThrows()" classname="org.example.HashTableTest" time="0.002"/>
+  <testcase name="get()" classname="org.example.HashTableTest" time="0.001"/>
+  <testcase name="put()" classname="org.example.HashTableTest" time="0.003"/>
+  <testcase name="testHashCode()" classname="org.example.HashTableTest" time="0.002"/>
+  <testcase name="removeMissingKey()" classname="org.example.HashTableTest" time="0.002"/>
+  <testcase name="iterator()" classname="org.example.HashTableTest" time="0.002"/>
+  <testcase name="testEquals()" classname="org.example.HashTableTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
