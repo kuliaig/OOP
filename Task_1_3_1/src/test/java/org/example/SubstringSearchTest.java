@@ -8,9 +8,12 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class SubstringSearchTest {
 
@@ -23,33 +26,29 @@ class SubstringSearchTest {
         return file;
     }
 
-    @Test
-    void example() throws IOException {
-        Path file = writeTemp("абракадабра");
-        assertEquals(List.of(1L, 8L), search.find(file.toString(), "бра"));
+    private List<Long> parseIndices(String s) {
+        if (s == null || s.isBlank()) {
+            return List.of();
+        }
+        return Arrays.stream(s.split(";"))
+                .map(Long::parseLong)
+                .toList();
     }
 
-    @Test
-    void empty() throws IOException {
-        Path file = writeTemp("абракадабра");
-        assertEquals(List.of(), search.find(file.toString(), ""));
-    }
-
-    @Test
-    void fileNotFound() {
-        assertThrows(IOException.class, () -> search.find("no_such_file.txt", "бра"));
-    }
-
-    @Test
-    void overlapping() throws IOException {
-        Path file = writeTemp("ааа");
-        assertEquals(List.of(0L, 1L), search.find(file.toString(), "аа"));
-    }
-
-    @Test
-    void emptyFile() throws IOException {
-        Path file = writeTemp("");
-        assertEquals(List.of(), search.find(file.toString(), "а"));
+    @ParameterizedTest
+    @CsvSource({
+            "абракадабра, бра, 1;8",
+            "ааа, аа, 0;1",
+            "абв, x, ",
+            "абра, аб, 0",
+            "абра, ра, 2",
+            "а, а, 0",
+            "аааа, аа, 0;1;2",
+    })
+    void finds(String content, String substring, String expectedStr) throws IOException {
+        Path file = writeTemp(content);
+        List<Long> expected = parseIndices(expectedStr);
+        assertEquals(expected, search.find(file.toString(), substring));
     }
 
     @Test
@@ -70,5 +69,34 @@ class SubstringSearchTest {
         assertEquals(1L, result.get(1));
         assertEquals(4L, result.get(2));
         assertEquals(5L, result.get(3));
+    }
+
+    @Test
+    void different() throws IOException {
+        Path file = writeTemp("Привет hello 123 мир hello");
+        assertEquals(List.of(7L, 21L), search.find(file.toString(), "hello"));
+    }
+
+    @Test
+    void longSubstring() throws IOException {
+        String substring = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        Path file = writeTemp("aaaaaa" + substring + "bbbbbb" + substring);
+        assertEquals(List.of(6L, 45L), search.find(file.toString(), substring));
+    }
+
+    @Test
+    void mixed(@TempDir Path tempDir) throws IOException {
+        Path file = tempDir.resolve("mixed.txt");
+        try (BufferedWriter w = Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {
+            w.write("абрекадабре ");
+            w.write("ааааа ");
+            w.write("брбрбре ");
+            w.write("xбреy бреz");
+            w.write(" ");
+            w.write("бре");
+        }
+
+        List<Long> result = search.find(file.toString(), "бре");
+        assertEquals(6, result.size());
     }
 }
